@@ -177,6 +177,14 @@ their author(s) have been provided above the used code.
 
 /*Workspace buttons*/
 
+
+#zen-workspaces-button:has() {
+  
+}
+
+
+
+
 #zen-workspaces-button {
   background-color: rgba(255, 255, 255, 0.2) !important;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.4),0 1px 0px rgba(255,255,255,0.7) !important;
