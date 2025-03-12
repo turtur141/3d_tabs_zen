@@ -173,9 +173,11 @@ their author(s) have been provided above the used code.
 
   #urlbar #urlbar-background {
     backdrop-filter: none;
-    background: color-mix(in srgb, var(--zen-branding-bg) 75%, transparent);
+    background:  light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
     border-radius: 10px !important;
-    transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease!important;
+    border-color: white!important; 
+    border: 3px solid light-dark(rgba(255, 255, 255, 1), rgba(125, 125, 125, 0.8))!important;
+    transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease,background-color .25s ease !important;
     @media (-moz-bool-pref: "natsumi.urlbar.disable-transparency") {
       background: var(--zen-branding-bg);
     }
@@ -387,8 +389,8 @@ their author(s) have been provided above the used code.
       /*noinspection CssInvalidFunction*/
       #urlbar-background {
         backdrop-filter: blur(10px)!important;
-        background-color:light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.25)) !important;
-        border: none /*1px solid light-dark(rgba(20, 20, 20, 0.2), rgba(235, 235, 235, 0.75))*/ !important;
+        background-color:light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7)) !important;
+        border: 3px solid light-dark(rgba(255, 255, 255, 1), rgba(100, 100, 100, 0.8))!important;
         border-radius: 15px !important;
         box-shadow:rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 2px 2px -2px !important;
         /*noinspection CssInvalidFunction
