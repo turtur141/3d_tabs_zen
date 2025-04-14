@@ -119,14 +119,21 @@ their author(s) have been provided above the used code.
       background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-/*Close icon*/
+/*Close and Reset buttons*/
 
 
 .close-icon, .reset-icon{
   border-radius: 8px !important;
   transition: transform .25s,background-color .15s!important;
 }
-.close-icon:hover, .reset-icon:hover {
+#zen-media-close-button{
+  width: 24px !important;
+  height: 24px !important;
+  transform: translateX(3px);
+  border-radius: 8px !important;
+  transition: transform .25s,background-color .15s!important;
+}
+#zen-media-close-button:hover,.close-icon:hover, .reset-icon:hover {
   background-color: light-dark(rgba(255, 100, 100, 0.9), rgba(160, 60, 60, 0.9)) !important;
   touch-action: manipulation;
   will-change: box-shadow,transform;
@@ -136,10 +143,13 @@ their author(s) have been provided above the used code.
   transform: translateY(-2px);
   animation: shadow-pop .25s ease-in-out forwards!important;
 }
+#zen-media-close-button:hover{
+  transform: translateY(-2px) translateX(3px);
+}
 .reset-icon:hover{
   background-color: light-dark(rgba(255, 180, 100, 0.9), rgba(200, 140, 80, 0.9)) !important;
 }
-.close-icon:not(:hover), .reset-icon:not(:hover){
+#zen-media-close-button:not(:hover),.close-icon:not(:hover), .reset-icon:not(:hover){
   animation: none!important;
   transition: transform .25s,background-color .15s,box-shadow .15s!important;
   box-shadow: 0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0 0px 0 rgba(0, 0, 0, 0.2) inset!important;
@@ -147,7 +157,7 @@ their author(s) have been provided above the used code.
 }
 
 
-.close-icon:active, .reset-icon:active {
+#zen-media-close-button:active,.close-icon:active, .reset-icon:active {
   &:hover{
     border-radius: 8px !important;
     background-color: light-dark(rgba(227, 94, 94, 0.9), rgba(128, 54, 54, 0.9)) !important;
@@ -161,13 +171,18 @@ their author(s) have been provided above the used code.
      background-color:light-dark(rgba(227, 174, 94, 0.9), rgba(180, 130, 70, 0.9))!important;
   }
 }
+#zen-media-close-button:active{
+  &:hover{
+    transform: translateY(1px) translateX(3px);
+  }
+}
 
 .tabbrowser-tab:active {
   & .tab-stack { 
     &:has(.tab-close-button:active){
       &:has(.tab-close-button:hover){
         & .tab-background, .tab-content .tab-icon-stack, .tab-content .tab-label-container {
-          transition: opacity .1s !important;
+          transition: opacity .15s !important;
           opacity: 0 !important;
         }
       }
@@ -181,9 +196,12 @@ their author(s) have been provided above the used code.
 
 
 #zen-workspaces-button {
+  --zen-overflowed-workspace-button-width: 33%; 
   background-color: rgba(255, 255, 255, 0.2) !important;
   box-shadow: inset 0 5px 4px rgba(0,0,0,0.4),0 1px 0px rgba(255,255,255,0.7), 0 2.5px 0px rgba(0,0,0,0.1) inset !important;
   border-radius: 10px !important;
+  width:auto !important;
+  container-type:inherit !important; 
 } 
 
 #zen-workspaces-button {
@@ -266,6 +284,14 @@ their author(s) have been provided above the used code.
   border-radius: 12px !important;
 }
 
+
+/*Media player*/
+
+#zen-media-controls-toolbar{
+  & > toolbaritem{
+    border-radius: 12px !important;
+  }
+}
 
 /* -- SLIDER -- i will try making it better
 
@@ -417,33 +443,10 @@ their author(s) have been provided above the used code.
   overflow: visible !important;
 }
 
-#zen-tabs-wrapper{
-  overflow: visible !important;
-}
-
 #titlebar{
   overflow: visible !important;
 }
 
-#TabsToolbar{
-  overflow: visible !important;
-}
-
-.toolbar-items{
-  overflow: visible !important;
-}
-
-#TabsToolbar-customization-target{
-  overflow: visible !important;
-}
-
-#tabbrowser-tabs{
-  overflow: visible !important;
-}
-
-scrollbox {
-  overflow: visible !important;
-}
 
 /*group tabs*/
 tab-group[split-view-group="true"]{
@@ -570,7 +573,7 @@ tab-group[split-view-group="true"]{
         justify-content: center!important;
         display: inline-flex!important;
         background-color:   light-dark(  rgba(255,255,255,0.05), rgba(0,0,0,0.05)) !important;
-        transition: opacity .15s,background-color .15s!important;
+        transition: opacity .15s!important;
         /*box-shadow:  transparent 0 2px 4px,transparent 0 2px 2px -2px,rgba(0, 0, 0, 0.2)  0 0px 0 inset, inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset!important;*/
         animation: shadow-click .15s forwards ease !important;
       }
@@ -581,7 +584,18 @@ tab-group[split-view-group="true"]{
 
 /*Essentials only*/
 
+
 #zen-essentials-container{ 
+  .tabbrowser-tab:is([pending]){
+    &:not(:hover){
+      &:not([selected],[multiselected = "true"]){
+        .tab-background{
+          background-color: light-dark(rgba(255,255,255,0.1), rgba(0, 0, 0, 0.1)) !important;
+        }
+      }
+    }
+  }
+  
   .tabbrowser-tab:not(:is([pending="true"])){
     &:not([selected],[multiselected = "true"]){
       .tab-background{

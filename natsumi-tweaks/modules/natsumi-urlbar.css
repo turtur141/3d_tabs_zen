@@ -147,7 +147,7 @@ their author(s) have been provided above the used code.
 }
 @keyframes url-height-animation{
   0%{
-    height: 30px;
+    height: 32px;
   }
   100%{
     height:290px;
@@ -158,7 +158,7 @@ their author(s) have been provided above the used code.
     height:290px;
   }
   100%{
-    height:30px;
+    height:32px;
   }
 }
 
@@ -174,9 +174,8 @@ their author(s) have been provided above the used code.
   #urlbar #urlbar-background {
     backdrop-filter: none;
     background:  light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
+    border: none!important;
     border-radius: 10px !important;
-    border-color: white!important; 
-    border: 3px solid light-dark(rgba(255, 255, 255, 1), rgba(125, 125, 125, 0.8))!important;
     transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease,background-color .25s ease !important;
     @media (-moz-bool-pref: "natsumi.urlbar.disable-transparency") {
       background: var(--zen-branding-bg);
@@ -389,8 +388,7 @@ their author(s) have been provided above the used code.
       /*noinspection CssInvalidFunction*/
       #urlbar-background {
         backdrop-filter: blur(10px)!important;
-        background-color:light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7)) !important;
-        border: 3px solid light-dark(rgba(255, 255, 255, 1), rgba(100, 100, 100, 0.8))!important;
+        background-color:light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.5)) !important;
         border-radius: 15px !important;
         box-shadow:rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 2px 2px -2px !important;
         /*noinspection CssInvalidFunction
@@ -480,7 +478,7 @@ their author(s) have been provided above the used code.
       &:hover{
         transform: translateY(-1px)!important;
         #urlbar-background {
-          /*background: color-mix(in srgb, var(--natsumi-primary-color) 75%, transparent) !important;*/
+          background:light-dark(rgba(255,255,255,0.8), rgba(0,0,0,0.5)) !important;
           box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 2px 2px -2px !important;
         }
       }
@@ -521,12 +519,6 @@ their author(s) have been provided above the used code.
       transition: background-color 0.2s ease !important;
     }
 
-    &:focus{
-      .urlbarView-row-inner {
-        box-shadow: rgba(0, 0, 0, 0.7) 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
-      }
-    }
-
     &:active {
       .urlbarView-row-inner {
         box-shadow: inset 0 2px 4px rgba(0,0,0,0.4), 0 0.5px 0px rgba(255,255,255,1) !important;
@@ -562,7 +554,7 @@ their author(s) have been provided above the used code.
         justify-content: center;
         display: inline-flex;
         transform: translateY(-1px);
-        background-color: rgba(255,255,255,0.2) !important;
+        background-color: light-dark( rgba(255,255,255,0.8),  rgba(0,0,0,0.8))  !important;
       }
 
       .urlbarView-button {
@@ -585,7 +577,7 @@ their author(s) have been provided above the used code.
       justify-content: center;
       display: inline-flex;
       transform: translateY(-1px);
-      background-color: rgba(255,255,255,0.2) !important;
+      background-color:light-dark( rgba(255,255,255,0.8),  rgba(0,0,0,0.8))  !important;
     }
   }
 
