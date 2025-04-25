@@ -170,20 +170,25 @@ their author(s) have been provided above the used code.
     --urlbarView-item-block-padding: 4px !important;
     --urlbarView-item-inline-padding: 4px !important;
   }
-
+  /*Fix the moving urlbar*/
+  #urlbar-container{
+    height: 32px !important;
+  }
+  
   #urlbar #urlbar-background {
     backdrop-filter: none;
     background:  light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
     border: none!important;
     border-radius: 10px !important;
+    margin: 0px !important;
     transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease,background-color .25s ease !important;
     @media (-moz-bool-pref: "natsumi.urlbar.disable-transparency") {
       background: var(--zen-branding-bg);
     }
   }
-  
   #urlbar {
     transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease, width .25s ease  !important;
+    height: 32px !important;
     .urlbarView-body-outer{
        transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease !important;    }
     .urlbarView-body-inner{
