@@ -150,12 +150,12 @@ their author(s) have been provided above the used code.
     height: 32px;
   }
   100%{
-    height:290px;
+    height:370px;
   }
 }
 @keyframes url-height-animation-out{
   0%{
-    height:290px;
+    height:370px;
   }
   100%{
     height:32px;
@@ -176,7 +176,6 @@ their author(s) have been provided above the used code.
   }
   
   #urlbar #urlbar-background {
-    backdrop-filter: none;
     background:  light-dark(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
     border: none!important;
     border-radius: 10px !important;
@@ -222,8 +221,11 @@ their author(s) have been provided above the used code.
     &[breakout-extend = "true"] {
         transition: width .25s ease,border-radius .25s ease,box-shadow .25s ease,transform .25s ease !important;
       #urlbar-background{ 
-        transform: translateY(-1px)!important;
+        transform: translateY(2px)!important;
         animation: url-height-animation .25s forwards ease !important;
+        backdrop-filter: blur(10px)!important;
+        outline: none !important;
+        margin: 0px !important;
       }
       @media not (-moz-bool-pref: "natsumi.urlbar.light") {
         /* URLbar animations, toggleable to make things lighter. */
@@ -392,10 +394,10 @@ their author(s) have been provided above the used code.
 
       /*noinspection CssInvalidFunction*/
       #urlbar-background {
-        backdrop-filter: blur(10px)!important;
         background-color:light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.5)) !important;
         border-radius: 15px !important;
         box-shadow:rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 2px 2px -2px !important;
+        
         /*noinspection CssInvalidFunction
         @media not (-moz-bool-pref: "natsumi.theme.disable-glass-shadow") {
           box-shadow: 0 0 var(--natsumi-glass-shadow-size) color-mix(in srgb, var(--natsumi-colors-secondary) var(--natsumi-glass-shadow-opacity), light-dark(black, white)) !important;
@@ -535,7 +537,7 @@ their author(s) have been provided above the used code.
       background: transparent !important;
 
       .urlbarView-row-inner {
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
         transition: box-shadow .15s,transform .15s;
         touch-action: manipulation;
         will-change: box-shadow,transform;
@@ -545,13 +547,16 @@ their author(s) have been provided above the used code.
         transform: translateY(-1px);
         background-color: light-dark(var(--natsumi-primary-color), var(--natsumi-colors-primary)) !important;
       }
+      .urlbarView-title {
+        color: white !important;
+      }
     }
 
     &:hover {
       background: transparent !important;
 
       .urlbarView-row-inner {
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
         transition: box-shadow .15s,transform .15s;
         touch-action: manipulation;
         will-change: box-shadow,transform;
@@ -559,7 +564,7 @@ their author(s) have been provided above the used code.
         justify-content: center;
         display: inline-flex;
         transform: translateY(-1px);
-        background-color: light-dark( rgba(255,255,255,0.8),  rgba(0,0,0,0.8))  !important;
+        background-color:  light-dark(var(--natsumi-primary-color), var(--natsumi-colors-primary)) !important;
       }
 
       .urlbarView-button {
@@ -571,10 +576,14 @@ their author(s) have been provided above the used code.
         margin-left: 2px !important;
         margin-right: 2px !important;
       }
+      
+      .urlbarView-title {
+        color: white !important;
+      }
     }
 
     .urlbarView-row-inner[selected] {
-      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
       transition: box-shadow .15s,transform .15s;
       touch-action: manipulation;
       will-change: box-shadow,transform;
@@ -582,7 +591,7 @@ their author(s) have been provided above the used code.
       justify-content: center;
       display: inline-flex;
       transform: translateY(-1px);
-      background-color:light-dark( rgba(255,255,255,0.8),  rgba(0,0,0,0.8))  !important;
+      background-color: light-dark(var(--natsumi-primary-color), var(--natsumi-colors-primary)) !important;
     }
   }
 

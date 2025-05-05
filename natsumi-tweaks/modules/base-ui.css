@@ -37,8 +37,15 @@ their author(s) have been provided above the used code.
 /*animations*/
 
 @keyframes shadow-pop{
+  0%{
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset;
+  }
+  50%{
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 2px 4px rgba(0,0,0,0), 0 -1px 0px rgba(255,255,255,0)inset;
+    background-color:  light-dark(rgba(255,255,255,0.4), rgba(0, 0, 0, 0.15));
+  }
   100%{
-    box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0 -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0px -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset, inset 0 2px 4px rgba(0,0,0,0), 0 -1px 0px rgba(255,255,255,0)inset;
     background-color:  light-dark(rgba(255,255,255,0.8), rgba(0, 0, 0, 0.3));
   }
 }
@@ -63,13 +70,13 @@ their author(s) have been provided above the used code.
 
 @keyframes shadow-click{
   0%{
-    box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3),0 -3px 0 inset rgba(0, 0, 0, 0.2), inset 0 0px 4px rgba(0,0,0,0), 0 0px 0px rgba(255,255,255,0)inset;
+    box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0px -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset, inset 0 0px 4px rgba(0,0,0,0), 0 0px 0px rgba(255,255,255,0)inset;
   }
   50%{
-    box-shadow: 0 0px 0px rgba(45, 35, 66, 0.4),0 0px 0px 0px rgba(45, 35, 66, 0.3), 0 0px 0 inset rgba(0, 0, 0, 0.2) ,  inset 0 0px 4px rgba(0,0,0,0.4), 0 0px 0px rgba(255,255,255,0.7)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 0px 4px rgba(0,0,0,0.4), 0 0px 0px rgba(255,255,255,0.7)inset;
   }
   100%{
-    box-shadow: 0 0px 0px rgba(45, 35, 66, 0.4), 0 0px 0px 0px rgba(45, 35, 66, 0.3), 0 0px 0 inset rgba(0, 0, 0, 0.2),  inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,   inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset;
   }
 }
 
@@ -118,7 +125,6 @@ their author(s) have been provided above the used code.
       box-shadow: rgba(45, 35, 66, 0.8) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px!important;
       background-color: rgba(0, 0, 0, 0.2) !important;
 }
-
 /*Close and Reset buttons*/
 
 
@@ -190,10 +196,9 @@ their author(s) have been provided above the used code.
   }
 }
 
-/*Workspace buttons   
+/*Workspace buttons   */
 
--- BUTTON --*/
-
+/* -- BACKGROUND -- */
 
 #zen-workspaces-button {
   --zen-overflowed-workspace-button-width: 33%; 
@@ -205,9 +210,11 @@ their author(s) have been provided above the used code.
   backdrop-filter: blur(10px);
 } 
 
+/* -- BUTTON -- */
+
 #zen-workspaces-button {
   .subviewbutton {
-    height:29px;
+    height:31px;
     transform:translateY(0px);
     width:29px!important;
     transition: transform .25s ease,background-color .25s ease,box-shadow .25s ease,height .25S ease;
@@ -220,7 +227,6 @@ their author(s) have been provided above the used code.
   .subviewbutton:hover {
     &:not([active="true"]){
       animation: shadow-pop-half .25s forwards ease;
-      height:29px;
       background: light-dark( rgba(255, 255, 255, 1), rgba(20, 20, 20, 0.8)) !important;
       touch-action: manipulation;
       will-change: box-shadow,transform,height !important;
@@ -389,7 +395,6 @@ their author(s) have been provided above the used code.
     justify-content: center;
     display: inline-flex;
     animation: shadow-pop .25s forwards ease !important;
-    transform: translateY(-1px)!important;
     .toolbarbutton-icon,.toolbarbutton-text{
       opacity: 1!important; 
       transform: translateY(-1px)!important;
@@ -404,7 +409,6 @@ their author(s) have been provided above the used code.
   }
   &:active{
     backdrop-filter: blur(10px)!important;
-    transform: translateY(2px)!important;
     .toolbarbutton-icon,.toolbarbutton-text {
       transform: translateY(2px)!important;
       transition: transform .1s; 
@@ -432,7 +436,7 @@ their author(s) have been provided above the used code.
   overflow: visible!important;
 }
 
-#zen-essentials-container{
+.zen-essentials-container{
   overflow: visible !important;
 }
 
@@ -459,7 +463,7 @@ tab-group[split-view-group="true"]{
 
 
 
-/*normal tabs*/
+/*NORMAL TABS*/
 
 .tabbrowser-tab {
   --tab-selected-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0 -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset;
@@ -476,16 +480,29 @@ tab-group[split-view-group="true"]{
   }
 }
 
+/*Fixing centered icons on compact mode*/
+#tabbrowser-tabs[orient="vertical"] {
+  &:not([expanded]) {
+    .tab-content{
+      margin-inline: auto !important;
+    }
+  }
+}
+
 .tabbrowser-tab {
+  --zen-active-tab-scale: 1;
   .tab-background{
     border-radius: 12px !important;
     position:relative!important;
+    transition: transform .25s ease,background-color .25s ease,box-shadow .25s ease,height .25S ease, margin-top .25s ease !important;
+    height: 36px;
+    margin-top: 3px!important;
   }
   &:hover{
     &:not([selected],[multiselected = "true"]){
       .tab-background{
         background-color: light-dark(  rgba(255,255,255,0.3), rgba(0, 0, 0, 0.1)) !important;
-        transition: background-color .25s,opacity .25s!important;
+        margin-top: 1px!important;
       }
       .tab-background{
         backdrop-filter: blur(10px)!important;
@@ -493,20 +510,17 @@ tab-group[split-view-group="true"]{
         box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0 -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset !important;
         background-color: (255,255,255,0.3);
         transition: all .25s!important;
+        transition: transform .25s ease,background-color .05s ease, backdrop-filter .05s ease,box-shadow .25s ease,height .25S ease, margin-top .25s ease !important;
         touch-action: manipulation;
         will-change: box-shadow,transform;
         position:static;
         justify-content: center;
         display: inline-flex;
+        height: 38px;
         /*animation: shadow-pop .25s forwards ease!important;*/
       }
-       .tab-stack {
-        opacity: 1!important; 
-        transform: translateY(-1px)!important;
-        transition: transform .25s,opacity .25s!important;
-      }
       .tab-content{
-        transform: translateY(-1px)!important;
+        transform: translateY(-2px)!important;
         transition: transform .25s,opacity .25s!important;
       }
     }
@@ -514,9 +528,12 @@ tab-group[split-view-group="true"]{
   &:not(:hover){
     &:not([selected],[multiselected = "true"]){
       .tab-background{
-        transition: transform .25s,background-color .15s,box-shadow .15s!important;
+        transition: transform .25s,background-color .5s  ,box-shadow .25s, height .25s, margin-top .25s!important;
         background-color: light-dark(  rgba(255,255,255,0), rgba(0, 0, 0, 0))  !important;
         box-shadow: 0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0 0px 0 rgba(0, 0, 0, 0.2) inset;
+      }
+      .tab-content{
+        transition: transform .15s,opacity .25s!important; 
       }
     }
   }
@@ -539,14 +556,14 @@ tab-group[split-view-group="true"]{
       position: relative;
       justify-content: center;
       display: inline-flex;
-      animation: shadow-pop .25s forwards ease;
-    }
-    .tab-stack {  
-      transform: translateY(-1px)!important;
-      transition: transform .25s,opacity .25s!important;
+      transition: opacity .125s, margin-top .125s .075s ease-in-out, height .125s .075s ease-in-out!important;
+      animation: shadow-pop .25s forwards ease !important;
+      height: 38px;
+      margin-top: 1px!important;
     }
     .tab-content{
-      transform: translateY(-1px)!important;
+      transform: translateY(-2px)!important;
+      transition: transform .25s, scale .25s  !important;
     }
   }
 }
@@ -555,17 +572,19 @@ tab-group[split-view-group="true"]{
     &:not(:has(.tab-icon-overlay:hover)){
       .tab-stack {
         transform: translateY(2px)!important;
-        transition: transform .1s,opacity .25s!important; 
+        transition: transform .125s,opacity .125s!important; 
       }
       .tab-content{
-        transform: translateY(2px)!important;
-        transition: transform .1s,opacity .25s!important; 
+        transform: translateY(3px)!important;
+        transition: transform .125s,opacity .15s!important; 
       }
       .tab-label-container{
         transform: translateY(0px)!important;
-        transition: transform .15s,opacity .25s!important; 
+        transition: transform .125s,opacity .125s!important; 
       }
       .tab-background{
+        height: 36px;
+        margin-top: 3px!important;
         backdrop-filter: blur(10px)!important;
         background: transparent!important;
         touch-action: manipulation!important;
@@ -574,35 +593,45 @@ tab-group[split-view-group="true"]{
         justify-content: center!important;
         display: inline-flex!important;
         background-color:   light-dark(  rgba(255,255,255,0.05), rgba(0,0,0,0.05)) !important;
-        transition: opacity .15s!important;
+        transition: opacity .125s, margin-top .125s ease-in-out, height .125s ease-in-out, background-color .125s!important;
         /*box-shadow:  transparent 0 2px 4px,transparent 0 2px 2px -2px,rgba(0, 0, 0, 0.2)  0 0px 0 inset, inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset!important;*/
-        animation: shadow-click .15s forwards ease !important;
+        animation: shadow-click .125s forwards ease !important;
       }
     }
   }
 }
 
 
-/*Essentials only*/
+/*ESSENTIALS ONLY*/
 
 
-#zen-essentials-container{ 
-  .tabbrowser-tab:is([pending]){
-    &:not(:hover){
+.zen-essentials-container{ 
+  .tabbrowser-tab{
+    .tab-content:hover{
       &:not([selected],[multiselected = "true"]){
-        .tab-background{
-          background-color: light-dark(rgba(255,255,255,0.1), rgba(0, 0, 0, 0.1)) !important;
+        transform: translateY(-3px)!important;
+      }
+    }
+    .tab-background{
+      transition: box-shadow .25s ease, min-height .25s ease, height .25s ease, transform .25s ease, margin-top .25s ease !important;
+    }
+    &:is([pending]){
+      &:not(:hover){
+        &:not([selected],[multiselected = "true"]){
+          .tab-background{
+            background-color: light-dark(rgba(255,255,255,0.1), rgba(0, 0, 0, 0.1)) !important;
+          }
         }
       }
     }
-  }
-  
-  .tabbrowser-tab:not(:is([pending="true"])){
-    &:not([selected],[multiselected = "true"]){
-      .tab-background{
-        backdrop-filter: blur(10px);!important;
-        box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0 -2px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-        transition: box-shadow .25s ease!important;
+
+    &:not(:is([pending="true"])){
+      &:not([selected],[multiselected = "true"]){
+        .tab-background{
+          backdrop-filter: blur(10px);!important;
+          box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0 -2px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+          transition: all .25s ease !important;
+        }
       }
     }
   }
