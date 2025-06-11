@@ -150,12 +150,12 @@ their author(s) have been provided above the used code.
     height: 32px;
   }
   100%{
-    height:370px;
+    height:325px;
   }
 }
 @keyframes url-height-animation-out{
   0%{
-    height:370px;
+    height:325px;
   }
   100%{
     height:32px;
@@ -186,12 +186,18 @@ their author(s) have been provided above the used code.
     }
   }
   #urlbar {
-    transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease, width .25s ease  !important;
+    transition:border-radius .25s ease,box-shadow .25s ease, width .25s ease  !important;
     height: 32px !important;
     .urlbarView-body-outer{
        transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease !important;    }
     .urlbarView-body-inner{
         transition:border-radius .25s ease,box-shadow .25s ease,transform .25s ease !important;
+    }
+    #urlbar-input {
+      transition: font-size .25s!important;
+    }
+    .urlbarView-favicon{
+      border-radius: 8px!important;
     }
     .urlbarView {
       overflow: initial !important;
@@ -219,9 +225,9 @@ their author(s) have been provided above the used code.
     }
 
     &[breakout-extend = "true"] {
-        transition: width .25s ease,border-radius .25s ease,box-shadow .25s ease,transform .25s ease !important;
+        transform: translateY(4px)!important;
+        transition: width .25s ease,border-radius .25s ease,box-shadow .25s ease !important;
       #urlbar-background{ 
-        transform: translateY(2px)!important;
         animation: url-height-animation .25s forwards ease !important;
         backdrop-filter: blur(10px)!important;
         outline: none !important;
@@ -347,7 +353,6 @@ their author(s) have been provided above the used code.
       }
 
       #urlbar-input {
-        transition: all .25s!important;
         font-size: 16px !important;
         margin-left: 2px !important;
         margin-right: 0 !important;
@@ -366,16 +371,15 @@ their author(s) have been provided above the used code.
         display: none !important;
       }*/
 
-      #identity-icon-box {
-        transition: all .25s!important;
-        margin-left: 1px !important;
-        padding-left: 6px !important;
-        padding-right: 6px !important;
-        border-radius: 7px !important;
-
+      #identity-box, #page-action-buttons {
         @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
           margin-left: 3px !important;
         }
+        margin-right: none!important;
+        padding: none !important;
+      }
+      #identity-icon-box{
+        margin-left: 2px!important;
       }
 
       /*.verifiedDomain {
@@ -408,12 +412,9 @@ their author(s) have been provided above the used code.
         }
       }
 
-      #identity-box {
-        margin-right: 10px !important;
-      }
-
       .urlbar-input-container {
         padding-inline: calc(var(--urlbar-margin-inline) + var(--urlbar-container-padding) - 2px) !important;
+        height: 32px!important;
       }
 
       @media (-moz-bool-pref: "natsumi.urlbar.force-nowrap") {
@@ -437,17 +438,13 @@ their author(s) have been provided above the used code.
       &:not([zen-floating-urlbar="true"]) {
         animation: none !important;
 
-        #identity-icon-box {
-          margin-left: 10px !important;
-        }
-
         @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
           #identity-icon-box {
-            margin-left: 12px !important;
+           /*margin-left: 12px !important;*/
           }
 
           #urlbar-input {
-            margin-left: 4px !important;
+            /*margin-left: 4px !important;*/
           }
         }
       }
@@ -483,10 +480,8 @@ their author(s) have been provided above the used code.
       }
 
       &:hover{
-        transform: translateY(-1px)!important;
         #urlbar-background {
           background:light-dark(rgba(255,255,255,0.8), rgba(0,0,0,0.5)) !important;
-          box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 2px 2px -2px !important;
         }
       }
     }
@@ -497,6 +492,7 @@ their author(s) have been provided above the used code.
 
     .urlbarView-row-inner {
       border-radius: 10px !important;
+      transition: all .15s;
     }
 
     .urlbarView-title, .urlbarView-url {
@@ -536,17 +532,17 @@ their author(s) have been provided above the used code.
     &[selected]{
       background: transparent !important;
 
-      .urlbarView-row-inner {
+       .urlbarView-row-inner {
         box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
-        transition: box-shadow .15s,transform .15s;
         touch-action: manipulation;
         will-change: box-shadow,transform;
         position: relative;
         justify-content: center;
         display: inline-flex;
-        transform: translateY(-1px);
-        background-color: light-dark(var(--natsumi-primary-color), var(--natsumi-colors-primary)) !important;
+        transform: translateY(-1px) scale(1.01, 1.01) !important;
+        background-color:  light-dark(var(--natsumi-primary-color), var(--natsumi-colors-primary)) !important;
       }
+      
       .urlbarView-title {
         color: white !important;
       }
@@ -557,13 +553,12 @@ their author(s) have been provided above the used code.
 
       .urlbarView-row-inner {
         box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
-        transition: box-shadow .15s,transform .15s;
         touch-action: manipulation;
         will-change: box-shadow,transform;
         position: relative;
         justify-content: center;
         display: inline-flex;
-        transform: translateY(-1px);
+        transform: translateY(-1px) scale(1.01, 1.01) !important;
         background-color:  light-dark(var(--natsumi-primary-color), var(--natsumi-colors-primary)) !important;
       }
 

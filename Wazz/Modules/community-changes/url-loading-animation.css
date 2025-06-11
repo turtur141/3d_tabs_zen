@@ -1,7 +1,7 @@
 /* - URL Bar Loading Animation - */
 /* Credit: https://github.com/wysh3/Zen-Mods */
 #urlbar:not([breakout-extend="true"]) { /* Unless urlbar is opened */
-    .urlbar-input-container::before {
+    #urlbar-background::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -12,11 +12,12 @@
       opacity: 0;
       transition: opacity 0.25s;
       pointer-events: none;
+      border-radius: inherit !important;
     }
   }
   
   &:has(#reload-button[displaystop="true"]) { /* When 'Stop' button is shown isntead of 'Reload' */
-    .urlbar-input-container::before {
+    #urlbar-background::before {
       animation-play-state: running;
       opacity: 1;
     }

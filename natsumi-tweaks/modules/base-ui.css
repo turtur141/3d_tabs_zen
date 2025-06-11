@@ -38,14 +38,14 @@ their author(s) have been provided above the used code.
 
 @keyframes shadow-pop{
   0%{
-    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0px rgba(255,255,255,0.7);
   }
   50%{
-    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 2px 4px rgba(0,0,0,0), 0 -1px 0px rgba(255,255,255,0)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 2px 4px rgba(0,0,0,0), 0 1px 0px rgba(255,255,255,0);
     background-color:  light-dark(rgba(255,255,255,0.4), rgba(0, 0, 0, 0.15));
   }
   100%{
-    box-shadow:0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0px -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset, inset 0 2px 4px rgba(0,0,0,0), 0 -1px 0px rgba(255,255,255,0)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0px -3px 0px 0px rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset, inset 0 2px 4px rgba(0,0,0,0), 0 1px 0px rgba(255,255,255,0);
     background-color:  light-dark(rgba(255,255,255,0.8), rgba(0, 0, 0, 0.3));
   }
 }
@@ -70,13 +70,13 @@ their author(s) have been provided above the used code.
 
 @keyframes shadow-click{
   0%{
-    box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0px -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset, inset 0 0px 4px rgba(0,0,0,0), 0 0px 0px rgba(255,255,255,0)inset;
+    box-shadow: 0 2px 4px rgba(45, 35, 66, 0.4), 0 2px 2px -2px rgba(45, 35, 66, 0.3), 0px -3px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.6) inset, inset 0 0px 4px rgba(0,0,0,0), 0 0px 0px rgba(255,255,255,0);
   }
   50%{
-    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 0px 4px rgba(0,0,0,0.4), 0 0px 0px rgba(255,255,255,0.7)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,  inset 0 0px 4px rgba(0,0,0,0.4), 0 0px 0px rgba(255,255,255,0.7);
   }
   100%{
-    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,   inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset;
+    box-shadow:0 2px 4px rgba(45, 35, 66, 0), 0 2px 2px -2px rgba(45, 35, 66, 0), 0px 0px 0 rgba(0, 0, 0, 0) inset, 0 1px 0 rgba(255, 255, 255, 0) inset,   inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0px rgba(255,255,255,0.7);
   }
 }
 
@@ -91,7 +91,7 @@ their author(s) have been provided above the used code.
     transform:translateY(1px);
   }
   100%{
-    box-shadow: 0 0px 0px rgba(45, 35, 66, 0.4), 0 0px 0px 0px rgba(45, 35, 66, 0.3), 0 0px 0 inset rgba(0, 0, 0, 0.2),  inset 0 2px 4px rgba(0,0,0,0.4), 0 -1px 0px rgba(255,255,255,0.7)inset;
+    box-shadow: 0 0px 0px rgba(45, 35, 66, 0.4), 0 0px 0px 0px rgba(45, 35, 66, 0.3), 0 0px 0 inset rgba(0, 0, 0, 0.2),  inset 0 2px 4px rgba(0,0,0,0.4), 0 1px 0px rgba(255,255,255,0.7);
     height:29px;
     transform:translateY(1px);
   }
@@ -127,6 +127,12 @@ their author(s) have been provided above the used code.
 }
 /*Close and Reset buttons*/
 
+.tab-content{
+  .close-icon{
+    /*transform: translateX(10px) !important;*/
+    background-image: none !important;
+  }
+}
 
 .close-icon, .reset-icon{
   border-radius: 8px !important;
@@ -289,6 +295,7 @@ their author(s) have been provided above the used code.
 	/*border: 1px solid #ffffff13 !important;*/ 
   background-color:light-dark(rgba(255,255,255,0.8), rgba(0, 0, 0, 0.25)) !important;
   border-radius: 12px !important;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 2px 2px -2px !important;
 }
 
 
@@ -441,7 +448,7 @@ their author(s) have been provided above the used code.
 }
 
 #zen-browser-tabs-wrapper{
-   overflow: visible !important;
+  overflow: visible !important;
 }
 
 #navigator-toolbox .browser-toolbox-background{
@@ -474,23 +481,29 @@ tab-group[split-view-group="true"]{
     opacity: 1;
     transition: transform 0.2s ease, opacity 0.2s ease !important;
     & .tab-background, .tab-content, .tab-label-container {
-      opacity: 1 !important;
+      opacity: 1;
       transition: background 0.2s ease, opacity 0.2s ease !important;
     }
   }
 }
+.tab-context-line{
+  background: transparent !important;
+}
 
-/*Fixing centered icons on compact mode*/
+/*Fixing centered icons on compact mode - not needed anymore*/
 #tabbrowser-tabs[orient="vertical"] {
   &:not([expanded]) {
     .tab-content{
-      margin-inline: auto !important;
+
+    }
+    .tab-close-button{
+
     }
   }
 }
 
 .tabbrowser-tab {
-  --zen-active-tab-scale: 1;
+  --zen-active-tab-scale: .99;
   .tab-background{
     border-radius: 12px !important;
     position:relative!important;
@@ -575,7 +588,7 @@ tab-group[split-view-group="true"]{
         transition: transform .125s,opacity .125s!important; 
       }
       .tab-content{
-        transform: translateY(3px)!important;
+        transform: translateY(3px) scale(0.99,0.99)!important;
         transition: transform .125s,opacity .15s!important; 
       }
       .tab-label-container{
